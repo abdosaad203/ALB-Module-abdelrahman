@@ -4,7 +4,7 @@ resource "aws_lb" "alb" {
 
   internal = var.alb_type == "internal" ? true : false
 
-  security_groups = [aws_security_group.alb_sg.id]
+  security_groups = [var.security_group_id]
   subnets         = var.subnet_ids
 }
 
